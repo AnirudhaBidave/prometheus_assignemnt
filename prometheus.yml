@@ -1,0 +1,8 @@
+global:
+  scrape_interval: "15s"
+
+scrape_configs:
+  - job_name: 'myapp-deployment'
+    static_configs:
+      - targets: ['192.168.59.100:30077']
+    metrics_path: s3bucket/metrics

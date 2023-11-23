@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: django-deployment
+  labels:
+    tire: frontend
+spec:
+  selector:
+    matchLabels:
+      app: mydjango-app
+  replicas: 1
+  template:
+    metadata:
+      name: mydjango-app
+      labels:
+        app: mydjango-app
+    spec:
+      containers:
+        - name: mydjango-app
+          image: anirudhabidave/my-django-app
